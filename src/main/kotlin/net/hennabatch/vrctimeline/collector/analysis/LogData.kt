@@ -1,11 +1,9 @@
 package net.hennabatch.vrctimeline.collector.analysis
 
-import java.time.LocalDate
-import java.time.LocalTime
+import java.time.LocalDateTime
 
 data class LogData(
-    val date: LocalDate,
-    val time: LocalTime,
+    val dateTime: LocalDateTime,
     val logType: String,
     val message: String
 )
