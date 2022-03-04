@@ -6,15 +6,18 @@ import org.komapper.annotation.KomapperEntity
 import org.komapper.annotation.KomapperId
 
 @KomapperEntity
-data class EventTypeEntity(
+data class ContentBindEntity(
     @KomapperId
     @KomapperAutoIncrement
-    @KomapperColumn(name = "event_type_id")
+    @KomapperColumn(name = "content_bind_id")
     val id: Int,
 
-    @KomapperColumn(name = "name")
-    val name: String,
+    @KomapperColumn(name = "event_type_id")
+    val eventTypeId: Int,
 
-    @KomapperColumn(name = "description")
-    val description: String
+    @KomapperColumn(name = "content_role_id")
+    val contentRoleId: Int,
+
+    @KomapperColumn(name = "bind_id_type")
+    val bindIdType: String
 )

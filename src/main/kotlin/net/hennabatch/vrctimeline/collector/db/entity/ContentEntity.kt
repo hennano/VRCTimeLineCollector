@@ -1,18 +1,23 @@
 package net.hennabatch.vrctimeline.collector.db.entity
 
 import org.komapper.annotation.*
-import org.komapper.core.dsl.operator.concat
 import java.time.LocalDateTime
 
 @KomapperEntity
-data class EventEntity(
+data class ContentEntity(
     @KomapperId
     @KomapperAutoIncrement
-    @KomapperColumn(name = "event_id")
+    @KomapperColumn(name = "content_id")
     val id: Int,
 
-    @KomapperColumn(name = "event_type_id")
-    val eventTypeId: Int,
+    @KomapperColumn(name = "event_id")
+    val eventId: Int,
+
+    @KomapperColumn(name = "content_role_id")
+    val contentRoleId: Int,
+
+    @KomapperColumn(name = "bind_id")
+    val bindId: Int,
 
     @KomapperCreatedAt
     @KomapperColumn(name = "created_at")
