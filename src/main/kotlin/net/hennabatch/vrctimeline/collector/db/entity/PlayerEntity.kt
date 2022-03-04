@@ -4,17 +4,17 @@ import org.komapper.annotation.*
 import java.time.LocalDateTime
 
 @KomapperEntity
-data class WorldEntity(
+data class PlayerEntity(
     @KomapperId
     @KomapperAutoIncrement
-    @KomapperColumn(name = "world_id")
+    @KomapperColumn(name = "player_id")
     val id: Int,
-
-    @KomapperColumn(name = "vrc_world_id")
-    val vrcWorldId: String,
 
     @KomapperColumn(name = "name")
     val name: String,
+
+    @KomapperColumn(name = "is_friend")
+    val isFriend: Boolean,
 
     @KomapperCreatedAt
     @KomapperColumn(name = "created_at")
