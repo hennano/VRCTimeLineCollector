@@ -11,6 +11,7 @@ data class EventEntity(
     @KomapperColumn(name = "event_id")
     val id: Int,
 
+    //イベントの種類id
     @KomapperColumn(name = "event_type_id")
     val eventTypeId: Int,
 

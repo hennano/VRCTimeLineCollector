@@ -15,9 +15,11 @@ data class ContentBindEntity(
     @KomapperColumn(name = "event_type_id")
     val eventTypeId: Int,
 
+    //ContentEntityを検索するために使用
     @KomapperColumn(name = "content_role_id")
     val contentRoleId: Int,
 
+    //どのidを保存するかkeyを指定する
     @KomapperColumn(name = "bind_id_type")
     val bindIdType: String
 )

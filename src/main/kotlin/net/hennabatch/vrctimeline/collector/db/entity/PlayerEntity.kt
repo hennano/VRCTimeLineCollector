@@ -10,12 +10,15 @@ data class PlayerEntity(
     @KomapperColumn(name = "player_id")
     val id: Int,
 
+    //vrc側のplayerid
     @KomapperColumn(name = "vrc_player_id")
     val vrcPlayerId: String = "",
 
+    //player名
     @KomapperColumn(name = "name")
     val name: String,
 
+    //フレンドかどうか
     @KomapperColumn(name = "is_friend")
     val isFriend: Boolean = false,
 
