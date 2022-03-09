@@ -2,13 +2,14 @@ package net.hennabatch.vrctimeline.collector.db.entity
 
 import org.komapper.annotation.*
 import java.time.LocalDateTime
+import kotlin.reflect.KProperty1
 
 @KomapperEntity
 data class PlayerEntity(
     @KomapperId
     @KomapperAutoIncrement
     @KomapperColumn(name = "player_id")
-    val id: Int,
+    val id: Int = -1,
 
     //vrc側のplayerid
     @KomapperColumn(name = "vrc_player_id")
@@ -16,11 +17,7 @@ data class PlayerEntity(
 
     //player名
     @KomapperColumn(name = "name")
-    val name: String,
-
-    //フレンドかどうか
-    @KomapperColumn(name = "is_friend")
-    val isFriend: Boolean = false,
+    var name: String,
 
     @KomapperCreatedAt
     @KomapperColumn(name = "created_at")
@@ -28,5 +25,14 @@ data class PlayerEntity(
 
     @KomapperUpdatedAt
     @KomapperColumn(name = "updated_at")
-    val updatedAt: LocalDateTime?= null
-)
+    val updatedAt: LocalDateTime?= null,
+
+    @KomapperIgnore
+    val keyMap: Map<KProperty1<PlayerEntity, Any?>, String> = mapOf(
+        Pair(PlayerEntity::id, "picture_id"),
+        Pair(PlayerEntity::vrcPlayerId, "vrc_player_id"),
+        Pair(PlayerEntity::name, "String"),
+        Pair(PlayerEntity::createdAt, "created_at"),
+        Pair(PlayerEntity::updatedAt, "updated_at"),
+    )
+): DBEntity

@@ -14,12 +14,13 @@ repositories {
 }
 
 dependencies {
-    val komapperVersion = "0.29.0"
+    val komapperVersion = "0.29.1"
     implementation("org.komapper:komapper-starter-jdbc:$komapperVersion")
     implementation("org.komapper:komapper-dialect-h2-jdbc:$komapperVersion")
     ksp("org.komapper:komapper-processor:$komapperVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
     testImplementation(kotlin("test"))
 }
 
